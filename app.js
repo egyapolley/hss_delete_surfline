@@ -83,7 +83,6 @@ async function deleteAuC(imsi,msisdn) {
         const {body} = response;
         let jsonObj = parser.parse(body, options);
         let result = jsonObj.Envelope.Body;
-        console.log(JSON.stringify(result))
         return !!(result.deleteMOResponse && result.deleteMOResponse.deletionList && result.deleteMOResponse.deletionList.mo && result.deleteMOResponse.deletionList.mo.moiLocation);
     } catch (e) {
         console.log("Error in deleting  AUC ",msisdn)
@@ -114,7 +113,6 @@ async function deleteSubDetails(profileId,msisdn) {
         const {body} = response;
         let jsonObj = parser.parse(body, options);
         let result = jsonObj.Envelope.Body;
-        console.log(JSON.stringify(result))
         return !!(result.deleteMOResponse && result.deleteMOResponse.deletionList && result.deleteMOResponse.deletionList.mo && result.deleteMOResponse.deletionList.mo.moiLocation);
     } catch (e) {
         console.log("Error in deleting HSS Sub ",msisdn)
